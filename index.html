@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>coopid · Brookies artesanales, horneados con amor</title>
+<meta name="description" content="El flechazo entre el brownie y la cookie. Brookies artesanales, tandas chicas, cortados a mano y entregados el mismo día." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Hanken+Grotesque:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== Marquee ===== -->
+  <div class="marquee">
+    <div class="marquee__track">
+      <span class="marquee__group">
+        <span>Horneados con amor</span><span class="marquee__sep">✦</span>
+        <span>El flechazo entre el brownie y la cookie</span><span class="marquee__sep">✦</span>
+        <span>Tandas chicas, cortados a mano</span><span class="marquee__sep">✦</span>
+        <span>Brookies artesanales</span><span class="marquee__sep">✦</span>
+      </span>
+      <span class="marquee__group" aria-hidden="true">
+        <span>Horneados con amor</span><span class="marquee__sep">✦</span>
+        <span>El flechazo entre el brownie y la cookie</span><span class="marquee__sep">✦</span>
+        <span>Tandas chicas, cortados a mano</span><span class="marquee__sep">✦</span>
+        <span>Brookies artesanales</span><span class="marquee__sep">✦</span>
+      </span>
+    </div>
+  </div>
+
+  <!-- ===== Nav ===== -->
+  <header class="nav">
+    <a href="#" class="nav__logo" aria-label="coopid inicio">
+      <img src="assets/img/cupid-brookie.png" alt="" />
+    </a>
+    <nav class="nav__links">
+      <a href="#brookie">Qué es un brookie</a>
+      <a href="#sabores">Sabores</a>
+      <a href="#marca">La marca</a>
+    </nav>
+    <a href="#sabores" class="btn">Ver el catálogo</a>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <!-- arrow doodles -->
+    <svg class="arrow arrow--h1" viewBox="0 0 200 60"><use href="#arrow" /></svg>
+    <svg class="arrow arrow--h2" viewBox="0 0 200 60"><use href="#arrow" /></svg>
+    <svg class="arrow arrow--h3" viewBox="0 0 200 60"><use href="#arrow" /></svg>
+    <svg class="arrow arrow--h4" viewBox="0 0 200 60"><use href="#arrow" /></svg>
+    <img class="hero__cupid" src="assets/img/cupid-brookie.png" alt="" />
+
+    <div class="hero__inner">
+      <h1 class="hero__title">
+        El <span class="script">flechazo</span> entre el<br />brownie y la cookie.
+      </h1>
+      <p class="hero__sub">
+        El centro húmedo y profundo de un brownie con pequeños pedazos de
+        cookie repartidos. Todo en una sola pieza, horneada del día.
+      </p>
+    </div>
+
+    <!-- cloud transition (bottom-left) -->
+    <div class="cloud cloud--hero" aria-hidden="true">
+      <svg viewBox="0 0 520 200" preserveAspectRatio="none">
+        <path fill="#F2E8D5" d="M0,200 L0,70 Q30,20 80,45 Q95,-5 150,20 Q185,-10 230,30 Q270,10 300,55 Q340,45 360,90 Q420,80 430,130 Q480,120 520,150 L520,200 Z"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ===== Qué es un brookie ===== -->
+  <section class="brookie" id="brookie">
+    <svg class="arrow arrow--b1" viewBox="0 0 200 60"><use href="#arrow" /></svg>
+    <svg class="arrow arrow--b2" viewBox="0 0 200 60"><use href="#arrow" /></svg>
+    <svg class="arrow arrow--b3" viewBox="0 0 200 60"><use href="#arrow" /></svg>
+    <img class="brookie__watermark" src="assets/img/cupid-brookie.png" alt="" />
+
+    <p class="eyebrow eyebrow--red">Qué es un brookie</p>
+    <h2 class="section-title section-title--red">
+      No es medio brownie ni media cookie.<br />Es algo mejor. Mucho mejor.
+    </h2>
+
+    <div class="brookie__grid">
+      <div class="brookie__col">
+        <article class="feature">
+          <h3>Centro húmedo</h3>
+          <p>La miga profunda del brownie, densa y todavía tibia por dentro. Nunca seca en los bordes.</p>
+        </article>
+        <article class="feature">
+          <h3>Pedazos de cookie</h3>
+          <p>Masa de galleta en trozos, repartida a mano antes del horno. Se ve y se muerde.</p>
+        </article>
+      </div>
+
+      <div class="brookie__photo">
+        <img src="assets/img/brookie-center.png" alt="Un brookie recién cortado" />
+      </div>
+
+      <div class="brookie__col">
+        <article class="feature">
+          <h3>Una sola pieza</h3>
+          <p>No son dos postres pegados: las dos masas se hornean juntas en la misma placa.</p>
+        </article>
+        <article class="feature">
+          <h3>Tanda chica</h3>
+          <p>Horneamos poco y seguido. Lo que sale del horno hoy se corta y se entrega hoy.</p>
+        </article>
+      </div>
+    </div>
+
+    <!-- cloud transition (bottom-right) into red -->
+    <div class="cloud cloud--brookie" aria-hidden="true">
+      <svg viewBox="0 0 520 200" preserveAspectRatio="none">
+        <path fill="#F2E8D5" d="M520,200 L520,70 Q490,20 440,45 Q425,-5 370,20 Q335,-10 290,30 Q250,10 220,55 Q180,45 160,90 Q100,80 90,130 Q40,120 0,150 L0,200 Z"/>
+      </svg>
+    </div>
+    <span class="drip" aria-hidden="true"></span>
+  </section>
+
+  <!-- ===== Sabores ===== -->
+  <section class="sabores" id="sabores">
+    <div class="sabores__head">
+      <p class="eyebrow eyebrow--cream">Sabores</p>
+      <h2 class="section-title section-title--cream">Cuatro maneras de flechar.</h2>
+    </div>
+
+    <div class="sabores__rail">
+      <article class="flavor">
+        <div class="flavor__img"><img src="assets/img/flavor-classico.jpg" alt="Brookie clásico" /></div>
+        <div class="flavor__body">
+          <h3>Clásico</h3>
+          <p>Chocolate semiamargo 60% y cookie de vainilla. El flechazo en su versión más limpia.</p>
+        </div>
+      </article>
+
+      <article class="flavor flavor--featured">
+        <div class="flavor__img"><img src="assets/img/flavor-dulce.jpg" alt="Brookie con nuez y sal" /></div>
+        <div class="flavor__body">
+          <h3>Nuez y sal</h3>
+          <p>Nueces tostadas en casa y una pizca de sal marina arriba, justo antes del horno.</p>
+        </div>
+      </article>
+
+      <article class="flavor">
+        <div class="flavor__img"><img src="assets/img/flavor-dulce.jpg" alt="Brookie de dulce de leche" /></div>
+        <div class="flavor__body">
+          <h3>Dulce de leche</h3>
+          <p>Corazón de dulce de leche repostero que se estira al partirlo por la mitad.</p>
+        </div>
+      </article>
+
+      <article class="flavor">
+        <div class="flavor__img"><img src="assets/img/flavor-classico.jpg" alt="Brookie de chocolate blanco y frambuesa" /></div>
+        <div class="flavor__body">
+          <h3>Blanco</h3>
+          <p>Chocolate blanco y frambuesa fresca, un toque ácido que corta el dulce.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== La marca ===== -->
+  <section class="marca" id="marca">
+    <img class="marca__icon" src="assets/img/cupid-brookie.png" alt="Cupido de coopid" />
+    <div class="marca__text">
+      <p class="eyebrow eyebrow--red">La marca</p>
+      <h2 class="section-title section-title--red marca__title">
+        Coopid nació de un flechazo: alguien no quiso elegir entre el brownie y la cookie, y horneó las dos cosas juntas.
+      </h2>
+      <p class="marca__body">
+        Desde entonces hacemos una sola cosa y la hacemos bien. Tandas chicas,
+        ingredientes que se pueden nombrar y un horno que no para.
+        <em>Product made by las Mías.</em>
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="footer__lead">
+        <h2>Brookies artesanales, horneados con amor.</h2>
+        <p>Tandas chicas, cortados a mano, entregados el mismo día.</p>
+      </div>
+      <div class="footer__cols">
+        <div>
+          <p class="footer__label">Navegar</p>
+          <a href="#brookie">Qué es un brookie</a>
+          <a href="#sabores">Sabores</a>
+          <a href="#marca">La marca</a>
+        </div>
+        <div>
+          <p class="footer__label">Redes</p>
+          <a href="#">Instagram</a>
+          <a href="#">TikTok</a>
+          <a href="#">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__card">
+      <img src="assets/img/cupid-brookie.png" alt="" />
+      <span class="script footer__wordmark">coopid</span>
+    </div>
+
+    <div class="footer__bottom">
+      <span>coopid® 2026 · Todos los derechos reservados</span>
+      <span>Product made by las Mías</span>
+    </div>
+  </footer>
+
+  <!-- ===== SVG defs: arrow doodle ===== -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="arrow" viewBox="0 0 200 60">
+      <g fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 30 Q14 20 24 18 Q30 12 36 20 Q46 14 40 30 Q46 42 34 40 Q28 48 22 40 Q12 42 20 30 Z"/>
+        <line x1="40" y1="30" x2="168" y2="30"/>
+        <path d="M150 16 L172 30 L150 44"/>
+        <path d="M158 22 L150 30 L158 38"/>
+        <path d="M168 20 L162 30 L168 40"/>
+      </g>
+    </symbol>
+  </svg>
+
+</body>
+</html>
