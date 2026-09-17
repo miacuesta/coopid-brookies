@@ -46,10 +46,10 @@
   <!-- ===== Hero ===== -->
   <section class="hero">
     <!-- arrow doodles -->
-    <svg class="arrow arrow--h1" viewBox="0 0 200 60"><use href="#arrow" /></svg>
-    <svg class="arrow arrow--h2" viewBox="0 0 200 60"><use href="#arrow" /></svg>
-    <svg class="arrow arrow--h3" viewBox="0 0 200 60"><use href="#arrow" /></svg>
-    <svg class="arrow arrow--h4" viewBox="0 0 200 60"><use href="#arrow" /></svg>
+    <img class="arrow arrow--h1" src="assets/img/arrow-cream.png" alt="" />
+    <img class="arrow arrow--h2" src="assets/img/arrow-cream.png" alt="" />
+    <img class="arrow arrow--h3" src="assets/img/arrow-cream.png" alt="" />
+    <img class="arrow arrow--h4" src="assets/img/arrow-cream.png" alt="" />
     <img class="hero__cupid" src="assets/img/cupid-brookie.png" alt="" />
 
     <div class="hero__inner">
@@ -72,9 +72,9 @@
 
   <!-- ===== Qué es un brookie ===== -->
   <section class="brookie" id="brookie">
-    <svg class="arrow arrow--b1" viewBox="0 0 200 60"><use href="#arrow" /></svg>
-    <svg class="arrow arrow--b2" viewBox="0 0 200 60"><use href="#arrow" /></svg>
-    <svg class="arrow arrow--b3" viewBox="0 0 200 60"><use href="#arrow" /></svg>
+    <img class="arrow arrow--b1" src="assets/img/arrow-red.png" alt="" />
+    <img class="arrow arrow--b2" src="assets/img/arrow-red.png" alt="" />
+    <img class="arrow arrow--b3" src="assets/img/arrow-red.png" alt="" />
     <img class="brookie__watermark" src="assets/img/cupid-brookie.png" alt="" />
 
     <p class="eyebrow eyebrow--red">Qué es un brookie</p>
@@ -122,39 +122,61 @@
   <!-- ===== Sabores ===== -->
   <section class="sabores" id="sabores">
     <div class="sabores__head">
-      <p class="eyebrow eyebrow--cream">Sabores</p>
-      <h2 class="section-title section-title--cream">Cuatro maneras de flechar.</h2>
+      <div>
+        <p class="eyebrow eyebrow--cream">Sabores</p>
+        <h2 class="section-title section-title--cream">Cuatro maneras de flechar.</h2>
+      </div>
+      <div class="sabores__nav">
+        <button class="rail-btn" data-rail="prev" aria-label="Anterior">
+          <svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="rail-btn" data-rail="next" aria-label="Siguiente">
+          <svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
     </div>
 
     <div class="sabores__rail">
       <article class="flavor">
-        <div class="flavor__img"><img src="assets/img/flavor-classico.jpg" alt="Brookie clásico" /></div>
+        <div class="flavor__img">
+          <img src="assets/img/flavor-classico.jpg" alt="Brookie clásico" />
+          <span class="flavor__tag">01</span>
+        </div>
         <div class="flavor__body">
-          <h3>Clásico</h3>
+          <h3><span class="flavor__heart">♥</span> Clásico</h3>
           <p>Chocolate semiamargo 60% y cookie de vainilla. El flechazo en su versión más limpia.</p>
         </div>
       </article>
 
-      <article class="flavor flavor--featured">
-        <div class="flavor__img"><img src="assets/img/flavor-dulce.jpg" alt="Brookie con nuez y sal" /></div>
+      <article class="flavor">
+        <div class="flavor__img">
+          <img src="assets/img/flavor-dulce.jpg" alt="Brookie con nuez y sal" />
+          <span class="flavor__tag">02</span>
+        </div>
         <div class="flavor__body">
-          <h3>Nuez y sal</h3>
+          <h3><span class="flavor__heart">♥</span> Nuez y sal</h3>
           <p>Nueces tostadas en casa y una pizca de sal marina arriba, justo antes del horno.</p>
         </div>
       </article>
 
       <article class="flavor">
-        <div class="flavor__img"><img src="assets/img/flavor-dulce.jpg" alt="Brookie de dulce de leche" /></div>
+        <div class="flavor__img">
+          <img src="assets/img/flavor-dulce.jpg" alt="Brookie de dulce de leche" />
+          <span class="flavor__tag">03</span>
+        </div>
         <div class="flavor__body">
-          <h3>Dulce de leche</h3>
+          <h3><span class="flavor__heart">♥</span> Dulce de leche</h3>
           <p>Corazón de dulce de leche repostero que se estira al partirlo por la mitad.</p>
         </div>
       </article>
 
       <article class="flavor">
-        <div class="flavor__img"><img src="assets/img/flavor-classico.jpg" alt="Brookie de chocolate blanco y frambuesa" /></div>
+        <div class="flavor__img">
+          <img src="assets/img/flavor-classico.jpg" alt="Brookie de chocolate blanco y frambuesa" />
+          <span class="flavor__tag">04</span>
+        </div>
         <div class="flavor__body">
-          <h3>Blanco</h3>
+          <h3><span class="flavor__heart">♥</span> Blanco</h3>
           <p>Chocolate blanco y frambuesa fresca, un toque ácido que corta el dulce.</p>
         </div>
       </article>
@@ -211,18 +233,23 @@
     </div>
   </footer>
 
-  <!-- ===== SVG defs: arrow doodle ===== -->
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <symbol id="arrow" viewBox="0 0 200 60">
-      <g fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M20 30 Q14 20 24 18 Q30 12 36 20 Q46 14 40 30 Q46 42 34 40 Q28 48 22 40 Q12 42 20 30 Z"/>
-        <line x1="40" y1="30" x2="168" y2="30"/>
-        <path d="M150 16 L172 30 L150 44"/>
-        <path d="M158 22 L150 30 L158 38"/>
-        <path d="M168 20 L162 30 L168 40"/>
-      </g>
-    </symbol>
-  </svg>
+  <script>
+    // Carrusel de sabores: botones prev/next
+    (function () {
+      var rail = document.querySelector('.sabores__rail');
+      if (!rail) return;
+      function step() {
+        var card = rail.querySelector('.flavor');
+        var gap = parseFloat(getComputedStyle(rail).columnGap) || 24;
+        return card ? card.offsetWidth + gap : rail.clientWidth * 0.8;
+      }
+      document.querySelectorAll('[data-rail]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          rail.scrollBy({ left: step() * (btn.dataset.rail === 'next' ? 1 : -1), behavior: 'smooth' });
+        });
+      });
+    })();
+  </script>
 
 </body>
 </html>

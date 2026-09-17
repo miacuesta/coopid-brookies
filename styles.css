@@ -158,19 +158,19 @@ img { display: block; max-width: 100%; }
   pointer-events: none;
 }
 
-/* ===== Arrow doodles ===== */
-.arrow { position: absolute; width: 120px; height: 36px; pointer-events: none; z-index: 2; }
-.hero .arrow { color: var(--crema-hero); opacity: .85; }
-.brookie .arrow { color: var(--rojo); opacity: .9; }
+/* ===== Arrow doodles (imágenes reales) ===== */
+.arrow { position: absolute; width: 120px; height: auto; pointer-events: none; z-index: 2; }
+.hero .arrow { opacity: .9; }
+.brookie .arrow { opacity: .92; }
 
-.arrow--h1 { top: 12%;  left: 3%;  transform: rotate(118deg); width: 90px; }
-.arrow--h2 { top: 34%;  left: 4%;  transform: rotate(70deg);  width: 100px; }
-.arrow--h3 { top: 58%;  left: 2%;  transform: rotate(120deg); width: 110px; }
-.arrow--h4 { top: 62%;  right: 18%; transform: rotate(28deg);  width: 130px; }
+.arrow--h1 { top: 11%;  left: 2.5%; transform: rotate(118deg); width: 90px; }
+.arrow--h2 { top: 33%;  left: 3.5%; transform: rotate(66deg);  width: 105px; }
+.arrow--h3 { top: 57%;  left: 1.5%; transform: rotate(120deg); width: 115px; }
+.arrow--h4 { top: 60%;  right: 16%; transform: rotate(24deg);  width: 135px; }
 
-.arrow--b1 { top: 14%; left: 5%;  transform: rotate(35deg);  width: 120px; }
-.arrow--b2 { top: 20%; left: 12%; transform: rotate(-8deg);  width: 150px; }
-.arrow--b3 { top: 44%; left: 2%;  transform: rotate(38deg);  width: 120px; }
+.arrow--b1 { top: 13%; left: 5%;  transform: rotate(35deg);  width: 120px; }
+.arrow--b2 { top: 19%; left: 11%; transform: rotate(-8deg);  width: 155px; }
+.arrow--b3 { top: 43%; left: 1.5%; transform: rotate(38deg); width: 120px; }
 
 /* ===== Cloud transitions ===== */
 .cloud { position: absolute; bottom: -1px; z-index: 4; line-height: 0; }
@@ -244,52 +244,97 @@ img { display: block; max-width: 100%; }
 .sabores {
   position: relative;
   background: var(--rojo);
-  padding: clamp(56px, 8vw, 90px) 0 clamp(70px, 10vw, 120px);
+  padding: clamp(56px, 8vw, 90px) 0 clamp(74px, 10vw, 120px);
   overflow: hidden;
 }
 .sabores__head {
   max-width: var(--maxw);
-  margin: 0 auto clamp(34px, 5vw, 56px);
+  margin: 0 auto clamp(30px, 4vw, 48px);
   padding: 0 clamp(20px, 5vw, 64px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
 }
 .sabores__head .eyebrow { display: block; margin-bottom: 16px; }
 
+.sabores__nav { display: flex; gap: 12px; flex-shrink: 0; }
+.rail-btn {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(244, 234, 215, .45);
+  background: transparent;
+  color: var(--crema-hero);
+  display: grid; place-items: center;
+  cursor: pointer;
+  transition: background .2s, color .2s, transform .18s, border-color .2s;
+}
+.rail-btn svg { width: 22px; height: 22px; }
+.rail-btn:hover {
+  background: var(--beige);
+  color: var(--rojo);
+  border-color: var(--beige);
+  transform: translateY(-2px);
+}
+
 .sabores__rail {
   display: flex;
-  gap: clamp(18px, 2vw, 28px);
-  align-items: center;
+  gap: clamp(20px, 2.2vw, 30px);
+  align-items: stretch;
   overflow-x: auto;
-  padding: 40px clamp(20px, 5vw, 64px);
+  padding: 14px clamp(20px, 5vw, 64px) 6px;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
+  scroll-padding-left: clamp(20px, 5vw, 64px);
 }
 .sabores__rail::-webkit-scrollbar { display: none; }
 
 .flavor {
-  flex: 0 0 clamp(240px, 27vw, 300px);
+  flex: 0 0 clamp(250px, 26vw, 296px);
   background: var(--beige);
-  border-radius: 26px;
+  border-radius: 28px;
   overflow: hidden;
-  scroll-snap-align: center;
-  box-shadow: 0 20px 44px rgba(0, 0, 0, .22);
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, .18);
+  transition: transform .28s ease, box-shadow .28s ease;
 }
-.flavor__img { aspect-ratio: 3 / 3.4; overflow: hidden; }
-.flavor__img img { width: 100%; height: 100%; object-fit: cover; }
-.flavor__body { padding: 22px 24px 30px; }
+.flavor:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 56px rgba(0, 0, 0, .34);
+}
+.flavor__img { position: relative; aspect-ratio: 4 / 3.5; overflow: hidden; }
+.flavor__img img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform .5s ease;
+}
+.flavor:hover .flavor__img img { transform: scale(1.06); }
+.flavor__tag {
+  position: absolute;
+  top: 14px; left: 14px;
+  background: rgba(30, 20, 15, .55);
+  color: var(--beige);
+  font-weight: 600;
+  font-size: .74rem;
+  letter-spacing: .12em;
+  padding: 5px 11px;
+  border-radius: 999px;
+  backdrop-filter: blur(4px);
+}
+.flavor__body { padding: 22px 24px 28px; flex: 1; }
 .flavor__body h3 {
   font-family: var(--sans);
   font-weight: 700;
   color: var(--rojo);
-  font-size: 1.35rem;
-  margin-bottom: 12px;
+  font-size: 1.32rem;
+  margin-bottom: 11px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
-.flavor__body p { color: rgba(30, 20, 15, .7); font-size: 1rem; line-height: 1.5; }
-
-.flavor--featured {
-  flex-basis: clamp(260px, 29vw, 330px);
-  transform: translateY(-26px);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, .3);
-}
+.flavor__heart { font-size: .82em; opacity: .85; }
+.flavor__body p { color: rgba(30, 20, 15, .68); font-size: .98rem; line-height: 1.5; }
 
 /* ===== La marca ===== */
 .marca {
@@ -404,7 +449,7 @@ img { display: block; max-width: 100%; }
 
 @media (max-width: 520px) {
   .hero__title { font-size: clamp(2.1rem, 10vw, 3rem); }
-  .flavor--featured { transform: none; }
+  .sabores__head { flex-direction: column; align-items: flex-start; }
   .footer__bottom { flex-direction: column; }
 }
 
