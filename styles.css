@@ -158,93 +158,122 @@ img { display: block; max-width: 100%; }
   pointer-events: none;
 }
 
-/* ===== Arrow doodles (imágenes reales) ===== */
+/* ===== Arrow doodles (imágenes reales, mirando hacia abajo) ===== */
 .arrow { position: absolute; width: 120px; height: auto; pointer-events: none; z-index: 2; }
 .hero .arrow { opacity: .9; }
-.brookie .arrow { opacity: .92; }
 
-.arrow--h1 { top: 11%;  left: 2.5%; transform: rotate(118deg); width: 90px; }
-.arrow--h2 { top: 33%;  left: 3.5%; transform: rotate(66deg);  width: 105px; }
-.arrow--h3 { top: 57%;  left: 1.5%; transform: rotate(120deg); width: 115px; }
-.arrow--h4 { top: 60%;  right: 16%; transform: rotate(24deg);  width: 135px; }
+.arrow--h1 { top: 12%; left: 6%;  transform: rotate(93deg);  width: 84px; }
+.arrow--h2 { top: 30%; left: 2.5%; transform: rotate(78deg); width: 98px; }
+.arrow--h3 { top: 55%; left: 7%;  transform: rotate(102deg); width: 106px; }
 
-.arrow--b1 { top: 13%; left: 5%;  transform: rotate(35deg);  width: 120px; }
-.arrow--b2 { top: 19%; left: 11%; transform: rotate(-8deg);  width: 155px; }
-.arrow--b3 { top: 43%; left: 1.5%; transform: rotate(38deg); width: 120px; }
-
-/* ===== Cloud transitions ===== */
-.cloud { position: absolute; bottom: -1px; z-index: 4; line-height: 0; }
-.cloud svg { display: block; }
-.cloud--hero { left: -2px; width: min(46vw, 560px); height: 150px; }
-.cloud--brookie { right: -2px; width: min(46vw, 560px); height: 150px; }
-
-.drip {
+/* flecha clavada en la última "o" de cookie */
+.hero__cookie { position: relative; white-space: nowrap; }
+.hero__o { position: relative; }
+.hero__strike {
   position: absolute;
-  bottom: -14px; left: 30%;
-  width: 34px; height: 42px; z-index: 5;
-  background: var(--crema);
-  border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
-  transform: rotate(8deg);
+  z-index: 4;
+  width: clamp(92px, 9vw, 124px);
+  max-width: none;
+  height: auto;
+  left: 50%;
+  top: -0.62em;
+  transform: translate(-70%, 19px) rotate(-125deg);
+  transform-origin: 50% 100%;
+  pointer-events: none;
 }
 
-/* ===== Qué es un brookie ===== */
+/* ===== Mordidas entre secciones (galletita) ===== */
+.bite { position: absolute; left: 0; width: 100%; z-index: 1; line-height: 0; pointer-events: none; }
+.bite svg { display: block; width: 100%; height: clamp(50px, 6.5vw, 92px); }
+.bite--up { bottom: -1px; }                                   /* beige sube y muerde el rojo */
+.bite--top { top: -1px; }                                     /* beige de arriba muerde el rojo */
+.bite--top svg { transform: scaleY(-1); }
+
+/* ===== Qué es un brookie (anatomía) ===== */
 .brookie {
   position: relative;
   background: var(--beige);
-  padding: clamp(56px, 8vw, 96px) clamp(20px, 5vw, 64px) clamp(90px, 12vw, 150px);
+  padding: clamp(56px, 8vw, 96px) clamp(20px, 5vw, 64px) clamp(92px, 12vw, 150px);
   text-align: center;
   overflow: hidden;
 }
-.brookie .eyebrow { display: block; margin-bottom: 18px; }
-.brookie .section-title { max-width: 720px; margin: 0 auto; }
-.brookie__watermark {
-  position: absolute; top: 24px; right: -40px;
-  width: clamp(220px, 26vw, 380px);
-  opacity: .07; z-index: 0; pointer-events: none;
-}
+.brookie__head .eyebrow { display: block; margin-bottom: 18px; }
+.brookie__head .section-title { max-width: 720px; margin: 0 auto; }
 
-.brookie__grid {
-  position: relative; z-index: 2;
-  margin-top: clamp(40px, 6vw, 70px);
-  max-width: var(--maxw);
-  margin-inline: auto;
+.anatomy { margin-top: clamp(40px, 6vw, 72px); }
+.anatomy__stage {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: 1fr clamp(210px, 25vw, 320px) 1fr;
+  grid-template-areas:
+    "tl disc tr"
+    "bl disc br";
   align-items: center;
-  gap: clamp(20px, 3vw, 40px);
+  gap: clamp(22px, 4vw, 54px) clamp(18px, 3vw, 46px);
+  max-width: 1060px;
+  margin: 0 auto;
 }
-.brookie__col { display: flex; flex-direction: column; gap: clamp(20px, 3vw, 34px); }
 
-.feature {
-  background: var(--crema);
-  border-radius: 26px;
-  padding: 26px 28px;
-  text-align: left;
-  box-shadow: 0 18px 40px rgba(30, 20, 15, .06);
+.anatomy__disc {
+  grid-area: disc;
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 42%, #EBD9C4 0%, #E4CFB6 70%, #DcC4A8 100%);
+  display: grid;
+  place-items: center;
+  box-shadow: inset 0 0 0 1px rgba(124,27,12,.12), 0 24px 50px rgba(30,20,15,.12);
 }
-.feature h3 {
+.anatomy__disc::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border: 2px dashed rgba(124, 27, 12, .28);
+  border-radius: 50%;
+}
+.anatomy__brookie { width: 74%; filter: drop-shadow(0 16px 24px rgba(30,20,15,.28)); }
+
+.anno { display: flex; align-items: center; gap: clamp(6px, 1vw, 14px); }
+.anno--tl { grid-area: tl; justify-content: flex-end; }
+.anno--bl { grid-area: bl; justify-content: flex-end; }
+.anno--tr { grid-area: tr; justify-content: flex-start; }
+.anno--br { grid-area: br; justify-content: flex-start; }
+
+.anno__text { max-width: 264px; }
+.anno--tl .anno__text, .anno--bl .anno__text { text-align: right; }
+.anno--tr .anno__text, .anno--br .anno__text { text-align: left; }
+
+.anno__n {
+  display: inline-block;
+  font-family: var(--round);
+  font-weight: 600;
+  font-size: .82rem;
+  letter-spacing: .06em;
+  color: #fff;
+  background: var(--rojo);
+  width: 30px; height: 30px; line-height: 30px;
+  border-radius: 50%;
+  margin-bottom: 12px;
+}
+.anno__text h3 {
   font-family: var(--sans);
   font-weight: 700;
   color: var(--rojo);
-  font-size: 1.18rem;
-  margin-bottom: 10px;
+  font-size: 1.16rem;
+  margin-bottom: 8px;
 }
-.feature p { color: rgba(30, 20, 15, .68); font-size: 1rem; line-height: 1.5; }
+.anno__text p { color: rgba(30, 20, 15, .66); font-size: .96rem; line-height: 1.48; }
 
-.brookie__photo {
-  width: clamp(220px, 26vw, 320px);
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: #E7D3BE;
-  display: grid; place-items: center;
-}
-.brookie__photo img { width: 78%; filter: drop-shadow(0 14px 22px rgba(30,20,15,.25)); }
+.anno__arrow { width: clamp(52px, 6vw, 76px); height: auto; flex-shrink: 0; opacity: .92; }
+.anno--tl .anno__arrow { transform: rotate(26deg); }
+.anno--bl .anno__arrow { transform: rotate(-26deg); }
+.anno--tr .anno__arrow { transform: rotate(154deg); }
+.anno--br .anno__arrow { transform: rotate(206deg); }
 
 /* ===== Sabores ===== */
 .sabores {
   position: relative;
   background: var(--rojo);
-  padding: clamp(56px, 8vw, 90px) 0 clamp(74px, 10vw, 120px);
+  padding: clamp(74px, 10vw, 128px) 0 clamp(80px, 11vw, 130px);
   overflow: hidden;
 }
 .sabores__head {
@@ -437,14 +466,27 @@ img { display: block; max-width: 100%; }
   .nav__links { display: none; }
   .nav { justify-content: space-between; }
 
-  .brookie__grid { grid-template-columns: 1fr; justify-items: center; }
-  .brookie__col { width: 100%; max-width: 460px; }
-  .brookie__photo { order: -1; margin-bottom: 8px; }
+  .anatomy__stage {
+    grid-template-columns: 1fr;
+    grid-template-areas: "disc" "tl" "bl" "tr" "br";
+    gap: clamp(18px, 5vw, 26px);
+    max-width: 420px;
+  }
+  .anatomy__disc { width: min(64vw, 260px); margin: 0 auto 6px; }
+  .anno { justify-content: flex-start !important; gap: 14px; }
+  .anno--tl .anno__text, .anno--bl .anno__text,
+  .anno--tr .anno__text, .anno--br .anno__text { text-align: left; max-width: none; }
+  .anno__arrow { display: none; }
+  .anno__n { margin-bottom: 8px; }
 
   .marca { grid-template-columns: 1fr; text-align: left; }
   .marca__icon { max-width: 130px; }
 
   .footer__top { flex-direction: column; }
+}
+
+@media (max-width: 640px) {
+  .hero .arrow, .hero__strike { display: none; }
 }
 
 @media (max-width: 520px) {
