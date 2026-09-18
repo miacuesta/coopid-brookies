@@ -7,7 +7,7 @@
 <meta name="description" content="El flechazo entre el brownie y la cookie. Brookies artesanales, tandas chicas, cortados a mano y entregados el mismo día." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Hanken+Grotesque:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&family=Fredoka:wght@400;500;600&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -45,7 +45,7 @@
 
   <!-- ===== Hero ===== -->
   <section class="hero">
-    <!-- arrow doodles (mirando hacia abajo) -->
+    <!-- arrow doodles (inclinadas, volando hacia el título) -->
     <img class="arrow arrow--h1" src="assets/img/arrow-cream.png" alt="" />
     <img class="arrow arrow--h2" src="assets/img/arrow-cream.png" alt="" />
     <img class="arrow arrow--h3" src="assets/img/arrow-cream.png" alt="" />
@@ -53,7 +53,7 @@
 
     <div class="hero__inner">
       <h1 class="hero__title">
-        El <span class="script">flechazo</span> entre el<br />brownie y la <span class="hero__cookie">co<span class="hero__o">o<img class="hero__strike" src="assets/img/arrow-cream.png" alt="" /></span>kie</span>.
+        El <span class="script">flechazo</span> entre el<br />brownie y la <span class="hero__cookie">co<span class="hero__o">o<img class="hero__strike" alt="" /></span>kie</span>.
       </h1>
       <p class="hero__sub">
         El centro húmedo y profundo de un brownie con pequeños pedazos de
@@ -69,6 +69,12 @@
 
   <!-- ===== Qué es un brookie ===== -->
   <section class="brookie" id="brookie">
+    <!-- flechas en zigzag ascendente por el margen izquierdo, mismo estilo que el hero -->
+    <img class="brookie__trail-arrow brookie__trail-arrow--1" src="assets/img/arrow-red.png" alt="" />
+    <img class="brookie__trail-arrow brookie__trail-arrow--2" src="assets/img/arrow-red.png" alt="" />
+    <img class="brookie__trail-arrow brookie__trail-arrow--3" src="assets/img/arrow-red.png" alt="" />
+    <img class="brookie__trail-arrow brookie__trail-arrow--4" src="assets/img/arrow-red.png" alt="" />
+
     <div class="brookie__head">
       <p class="eyebrow eyebrow--red">Qué es un brookie</p>
       <h2 class="section-title section-title--red">
@@ -85,35 +91,27 @@
 
         <article class="anno anno--tl">
           <div class="anno__text">
-            <span class="anno__n">01</span>
             <h3>Centro húmedo</h3>
             <p>La miga profunda del brownie, densa y todavía tibia por dentro. Nunca seca en los bordes.</p>
           </div>
-          <img class="anno__arrow" src="assets/img/arrow-red.png" alt="" />
         </article>
 
         <article class="anno anno--bl">
           <div class="anno__text">
-            <span class="anno__n">02</span>
             <h3>Pedazos de cookie</h3>
             <p>Masa de galleta en trozos, repartida a mano antes del horno. Se ve y se muerde.</p>
           </div>
-          <img class="anno__arrow" src="assets/img/arrow-red.png" alt="" />
         </article>
 
         <article class="anno anno--tr">
-          <img class="anno__arrow" src="assets/img/arrow-red.png" alt="" />
           <div class="anno__text">
-            <span class="anno__n">03</span>
             <h3>Una sola pieza</h3>
             <p>No son dos postres pegados: las dos masas se hornean juntas en la misma placa.</p>
           </div>
         </article>
 
         <article class="anno anno--br">
-          <img class="anno__arrow" src="assets/img/arrow-red.png" alt="" />
           <div class="anno__text">
-            <span class="anno__n">04</span>
             <h3>Tanda chica</h3>
             <p>Horneamos poco y seguido. Lo que sale del horno hoy se corta y se entrega hoy.</p>
           </div>
@@ -141,18 +139,18 @@
           <span class="flavor__tag">01</span>
         </div>
         <div class="flavor__body">
-          <h3><span class="flavor__heart">♥</span> Clásico</h3>
+          <h3>Clásico</h3>
           <p>Chocolate semiamargo 60% y cookie de vainilla. El flechazo en su versión más limpia.</p>
         </div>
       </article>
 
       <article class="flavor">
         <div class="flavor__img">
-          <img src="assets/img/flavor-dulce.jpg" alt="Brookie con nuez y sal" style="object-position:50% 40%" />
+          <img src="assets/img/flavor-nuez.jpg" alt="Brookie con nuez y sal" style="object-position:50% 40%" />
           <span class="flavor__tag">02</span>
         </div>
         <div class="flavor__body">
-          <h3><span class="flavor__heart">♥</span> Nuez y sal</h3>
+          <h3>Nuez y sal</h3>
           <p>Nueces tostadas en casa y una pizca de sal marina arriba, justo antes del horno.</p>
         </div>
       </article>
@@ -163,18 +161,18 @@
           <span class="flavor__tag">03</span>
         </div>
         <div class="flavor__body">
-          <h3><span class="flavor__heart">♥</span> Dulce de leche</h3>
+          <h3>Dulce de leche</h3>
           <p>Corazón de dulce de leche repostero que se estira al partirlo por la mitad.</p>
         </div>
       </article>
 
       <article class="flavor">
         <div class="flavor__img">
-          <img src="assets/img/flavor-classico.jpg" alt="Brookie de chocolate blanco y frambuesa" style="object-position:50% 78%" />
+          <img src="assets/img/flavor-blanco.jpg" alt="Brookie de chocolate blanco y frambuesa" style="object-position:50% 50%" />
           <span class="flavor__tag">04</span>
         </div>
         <div class="flavor__body">
-          <h3><span class="flavor__heart">♥</span> Blanco</h3>
+          <h3>Blanco</h3>
           <p>Chocolate blanco y frambuesa fresca, un toque ácido que corta el dulce.</p>
         </div>
       </article>

@@ -13,8 +13,9 @@
   --crema: #F7F7F5;
   --tinta: #1E140F;
   --crema-hero: #F4EAD7;
-  --sans: "Hanken Grotesque", system-ui, -apple-system, sans-serif;
+  --sans: "Hanken Grotesk", system-ui, -apple-system, sans-serif;
   --round: "Fredoka", var(--sans);
+  --baloo: "Baloo 2", var(--round);
   --script: "Choco Taste", cursive;
   --maxw: 1180px;
 }
@@ -30,6 +31,8 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 img { display: block; max-width: 100%; }
@@ -157,28 +160,28 @@ img { display: block; max-width: 100%; }
   pointer-events: none;
 }
 
-/* ===== Arrow doodles (corazón hacia abajo, mismo camino) ===== */
-.arrow { position: absolute; width: 92px; height: auto; pointer-events: none; z-index: 2; }
-.hero .arrow { opacity: .9; transform: rotate(-90deg); }
+/* ===== Arrow doodles (inclinadas, volando hacia el título) ===== */
+.arrow { position: absolute; width: 110px; height: auto; pointer-events: none; z-index: 2; }
+.hero .arrow { opacity: .9; transform: rotate(-55deg); }
 
-/* trazan una diagonal descendente, todas con el mismo ángulo */
-.arrow--h1 { top: 12%; left: 6%;  }
-.arrow--h2 { top: 33%; left: 10%; }
-.arrow--h3 { top: 54%; left: 14%; }
+/* trazan una diagonal ascendente hacia el título, sin bajar hasta el subtítulo */
+.arrow--h1 { top: 9%;  left: 5%;  }
+.arrow--h2 { top: 20%; left: 8%; }
+.arrow--h3 { top: 31%; left: 11%; }
 
-/* flecha clavada en la última "o" de cookie */
+/* flecha clavada en la última "o" de cookie, de abajo hacia arriba */
 .hero__cookie { position: relative; white-space: nowrap; }
 .hero__o { position: relative; }
 .hero__strike {
   position: absolute;
   z-index: 4;
-  width: clamp(92px, 9vw, 124px);
+  width: clamp(78px, 8vw, 108px);
   max-width: none;
   height: auto;
   left: 50%;
-  top: -0.62em;
-  transform: translate(-70%, 19px) rotate(-125deg);
-  transform-origin: 50% 100%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-55deg);
+  transform-origin: 50% 50%;
   pointer-events: none;
 }
 
@@ -199,6 +202,20 @@ img { display: block; max-width: 100%; }
 }
 .brookie__head .eyebrow { display: block; margin-bottom: 18px; }
 .brookie__head .section-title { max-width: 720px; margin: 0 auto; }
+
+/* flechas en zigzag ascendente por el margen izquierdo, desde las cards hasta arriba del todo */
+.brookie__trail-arrow {
+  position: absolute;
+  width: 84px;
+  height: auto;
+  opacity: .85;
+  z-index: 2;
+  pointer-events: none;
+}
+.brookie__trail-arrow--1 { top: clamp(10px, 2vw, 26px);  left: clamp(6px, 2vw, 22px);  transform: rotate(-83deg); }
+.brookie__trail-arrow--2 { top: clamp(84px, 10vw, 128px); left: clamp(24px, 5vw, 52px);  transform: rotate(-119deg); }
+.brookie__trail-arrow--3 { top: clamp(172px, 17vw, 222px); left: clamp(70px, 9vw, 112px); transform: rotate(-159deg); }
+.brookie__trail-arrow--4 { top: clamp(246px, 23vw, 300px); left: clamp(6px, 3vw, 30px);  transform: rotate(-131deg); }
 
 .anatomy { margin-top: clamp(40px, 6vw, 72px); }
 .anatomy__stage {
@@ -238,36 +255,31 @@ img { display: block; max-width: 100%; }
 .anno--tr { grid-area: tr; justify-content: flex-start; }
 .anno--br { grid-area: br; justify-content: flex-start; }
 
-.anno__text { max-width: 264px; }
+.anno__text {
+  max-width: 264px;
+  background: #F5F5F4;
+  border: 1px solid rgba(124, 27, 12, .16);
+  border-radius: 18px;
+  padding: 18px 22px;
+}
 .anno--tl .anno__text, .anno--bl .anno__text { text-align: right; }
 .anno--tr .anno__text, .anno--br .anno__text { text-align: left; }
 
-.anno__n {
-  display: inline-block;
-  font-family: var(--round);
-  font-weight: 600;
-  font-size: .82rem;
-  letter-spacing: .06em;
-  color: #fff;
-  background: var(--rojo);
-  width: 30px; height: 30px; line-height: 30px;
-  border-radius: 50%;
-  margin-bottom: 12px;
-}
 .anno__text h3 {
-  font-family: var(--sans);
-  font-weight: 700;
+  font-family: var(--baloo);
+  font-weight: 600;
   color: var(--rojo);
   font-size: 1.16rem;
   margin-bottom: 8px;
 }
-.anno__text p { color: rgba(30, 20, 15, .66); font-size: .96rem; line-height: 1.48; }
+.anno__text p { font-family: var(--sans); color: rgba(30, 20, 15, .66); font-size: .96rem; line-height: 1.48; }
 
+/* las flechas llegan desde el lado del círculo y clavan la punta en la card */
 .anno__arrow { width: clamp(52px, 6vw, 76px); height: auto; flex-shrink: 0; opacity: .92; }
-.anno--tl .anno__arrow { transform: rotate(26deg); }
-.anno--bl .anno__arrow { transform: rotate(-26deg); }
-.anno--tr .anno__arrow { transform: rotate(154deg); }
-.anno--br .anno__arrow { transform: rotate(206deg); }
+.anno--tl .anno__arrow { transform: rotate(154deg); }
+.anno--bl .anno__arrow { transform: rotate(206deg); }
+.anno--tr .anno__arrow { transform: rotate(26deg); }
+.anno--br .anno__arrow { transform: rotate(-26deg); }
 
 /* ===== Sabores ===== */
 .sabores {
@@ -294,19 +306,18 @@ img { display: block; max-width: 100%; }
 }
 
 .flavor {
-  background: var(--beige);
-  border-radius: 24px;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 16px 34px rgba(0, 0, 0, .2);
-  transition: transform .28s ease, box-shadow .28s ease;
+  transition: transform .28s ease;
 }
-.flavor:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 30px 56px rgba(0, 0, 0, .34);
+.flavor:hover { transform: translateY(-8px); }
+.flavor__img {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 24px;
+  box-shadow: 0 16px 34px rgba(0, 0, 0, .22);
 }
-.flavor__img { position: relative; aspect-ratio: 1 / 1; overflow: hidden; }
 .flavor__img img {
   width: 100%; height: 100%; object-fit: cover;
   transition: transform .5s ease;
@@ -324,19 +335,32 @@ img { display: block; max-width: 100%; }
   border-radius: 999px;
   backdrop-filter: blur(4px);
 }
-.flavor__body { padding: 22px 24px 28px; flex: 1; }
+
+.texto-no-editable {
+  user-select: none; /* Versión estándar moderna */
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge antiguo */
+}
+
+
+/* rectángulo blanco redondeado: contraste para que el texto se lea sobre el rojo */
+.flavor__body {
+  margin-top: 14px;
+  padding: 20px 22px 24px;
+  flex: 1;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, .14);
+}
 .flavor__body h3 {
-  font-family: var(--sans);
-  font-weight: 700;
+  font-family: var(--baloo);
+  font-weight: 600;
   color: var(--rojo);
   font-size: 1.32rem;
   margin-bottom: 11px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
 }
-.flavor__heart { font-size: .82em; opacity: .85; }
-.flavor__body p { color: rgba(30, 20, 15, .68); font-size: .98rem; line-height: 1.5; }
+.flavor__body p { font-family: var(--sans); color: rgba(30, 20, 15, .68); font-size: .98rem; line-height: 1.5; }
 
 /* ===== La marca ===== */
 .marca {
@@ -464,6 +488,7 @@ img { display: block; max-width: 100%; }
 
 @media (max-width: 640px) {
   .hero .arrow, .hero__strike { display: none; }
+  .brookie__trail-arrow { display: none; }
 }
 
 @media (max-width: 480px) {
