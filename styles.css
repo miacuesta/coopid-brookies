@@ -157,14 +157,14 @@ img { display: block; max-width: 100%; }
   pointer-events: none;
 }
 
-/* ===== Arrow doodles (corazón hacia abajo, mismo camino) ===== */
+/* ===== Arrow doodles (corazón hacia abajo, levemente rotadas) ===== */
 .arrow { position: absolute; width: 92px; height: auto; pointer-events: none; z-index: 2; }
-.hero .arrow { opacity: .9; transform: rotate(-90deg); }
+.hero .arrow { opacity: .9; }
 
-/* trazan una diagonal descendente, todas con el mismo ángulo */
-.arrow--h1 { top: 12%; left: 6%;  }
-.arrow--h2 { top: 33%; left: 10%; }
-.arrow--h3 { top: 54%; left: 14%; }
+/* trazan una diagonal descendente, con una leve rotación cada una */
+.arrow--h1 { top: 12%; left: 6%;  transform: rotate(-78deg); }
+.arrow--h2 { top: 33%; left: 10%; transform: rotate(-100deg); }
+.arrow--h3 { top: 54%; left: 14%; transform: rotate(-86deg); }
 
 /* flecha clavada en la última "o" de cookie */
 .hero__cookie { position: relative; white-space: nowrap; }
@@ -206,7 +206,12 @@ img { display: block; max-width: 100%; }
   overflow: hidden;
 }
 .brookie__head .eyebrow { display: block; margin-bottom: 18px; }
-.brookie__head .section-title { max-width: 720px; margin: 0 auto; }
+.brookie__head .section-title {
+  max-width: 940px;
+  margin: 0 auto;
+  font-size: clamp(1.6rem, 4vw, 2.85rem);
+  text-wrap: balance;
+}
 
 .anatomy { margin-top: clamp(40px, 6vw, 72px); }
 .anatomy__stage {
@@ -251,17 +256,22 @@ img { display: block; max-width: 100%; }
 .anno--tr .anno__text, .anno--br .anno__text { text-align: left; }
 
 .anno__n {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-family: var(--round);
   font-weight: 600;
-  font-size: .82rem;
-  letter-spacing: .06em;
-  color: #fff;
+  font-size: .88rem;
+  letter-spacing: 0;
+  color: var(--beige);
   background: var(--rojo);
-  width: 30px; height: 30px; line-height: 30px;
+  width: 34px; height: 34px;
   border-radius: 50%;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
+  box-shadow: 0 6px 14px rgba(124, 27, 12, .28);
 }
+/* alinear el número con su columna */
+.anno--tl .anno__n, .anno--bl .anno__n { margin-left: auto; }
 .anno__text h3 {
   font-family: var(--sans);
   font-weight: 700;
@@ -484,7 +494,38 @@ img { display: block; max-width: 100%; }
   .footer__bottom { flex-direction: column; }
 }
 
+/* ===== Animaciones de entrada ===== */
+.js [data-anim] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .7s ease, transform .7s cubic-bezier(.2, .7, .2, 1);
+  will-change: opacity, transform;
+}
+.js [data-anim].in { opacity: 1; transform: none; }
+[data-anim-delay="1"] { transition-delay: .09s; }
+[data-anim-delay="2"] { transition-delay: .18s; }
+[data-anim-delay="3"] { transition-delay: .27s; }
+[data-anim-delay="4"] { transition-delay: .36s; }
+/* una vez visible, la tarjeta vuelve a su hover ágil */
+.js .flavor.in { transition: transform .28s ease, box-shadow .28s ease; }
+
+/* flotación suave del cupido */
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+.hero__cupid { animation: floaty 6s ease-in-out infinite; }
+
+/* leve latido del corazón que se clava en la cookie */
+@keyframes heartbeat {
+  0%, 100% { transform: translate(-70%, 19px) rotate(-125deg) scale(1); }
+  50% { transform: translate(-70%, 19px) rotate(-125deg) scale(1.08); }
+}
+.hero__strike { animation: heartbeat 2.6s ease-in-out infinite; transform-origin: 100% 100%; }
+
 @media (prefers-reduced-motion: reduce) {
   .marquee__track { animation: none; }
+  .hero__cupid, .hero__strike { animation: none; }
+  .js [data-anim] { opacity: 1; transform: none; transition: none; }
   html { scroll-behavior: auto; }
 }

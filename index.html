@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Hanken+Grotesque:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
+<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
@@ -52,10 +53,10 @@
     <img class="hero__cupid" src="assets/img/cupid-brookie.png" alt="" />
 
     <div class="hero__inner">
-      <h1 class="hero__title">
+      <h1 class="hero__title" data-anim>
         El <span class="script">flechazo</span> entre el<br />brownie y la <span class="hero__cookie">co<span class="hero__o">o<img class="hero__strike" src="assets/img/arrow-cream.png" alt="" /></span>kie</span>.
       </h1>
-      <p class="hero__sub">
+      <p class="hero__sub" data-anim data-anim-delay="1">
         El centro húmedo y profundo de un brownie con pequeños pedazos de
         cookie repartidos. Todo en una sola pieza, horneada del día.
       </p>
@@ -71,7 +72,7 @@
 
   <!-- ===== Qué es un brookie ===== -->
   <section class="brookie" id="brookie">
-    <div class="brookie__head">
+    <div class="brookie__head" data-anim>
       <p class="eyebrow eyebrow--red">Qué es un brookie</p>
       <h2 class="section-title section-title--red">
         No es medio brownie ni media cookie.<br />Es algo mejor. Mucho mejor.
@@ -85,7 +86,7 @@
           <img class="anatomy__brookie" src="assets/img/brookie-center.png" alt="Un brookie recién cortado" />
         </div>
 
-        <article class="anno anno--tl">
+        <article class="anno anno--tl" data-anim data-anim-delay="1">
           <div class="anno__text">
             <span class="anno__n">01</span>
             <h3>Centro húmedo</h3>
@@ -94,7 +95,7 @@
           <img class="anno__arrow" src="assets/img/arrow-red.png" alt="" />
         </article>
 
-        <article class="anno anno--bl">
+        <article class="anno anno--bl" data-anim data-anim-delay="2">
           <div class="anno__text">
             <span class="anno__n">02</span>
             <h3>Pedazos de cookie</h3>
@@ -103,7 +104,7 @@
           <img class="anno__arrow" src="assets/img/arrow-red.png" alt="" />
         </article>
 
-        <article class="anno anno--tr">
+        <article class="anno anno--tr" data-anim data-anim-delay="1">
           <img class="anno__arrow" src="assets/img/arrow-red.png" alt="" />
           <div class="anno__text">
             <span class="anno__n">03</span>
@@ -112,7 +113,7 @@
           </div>
         </article>
 
-        <article class="anno anno--br">
+        <article class="anno anno--br" data-anim data-anim-delay="2">
           <img class="anno__arrow" src="assets/img/arrow-red.png" alt="" />
           <div class="anno__text">
             <span class="anno__n">04</span>
@@ -134,13 +135,13 @@
 
   <!-- ===== Sabores ===== -->
   <section class="sabores" id="sabores">
-    <div class="sabores__head">
+    <div class="sabores__head" data-anim>
       <p class="eyebrow eyebrow--cream">Sabores</p>
       <h2 class="section-title section-title--cream">Cuatro maneras de flechar.</h2>
     </div>
 
     <div class="sabores__grid">
-      <article class="flavor">
+      <article class="flavor" data-anim data-anim-delay="1">
         <div class="flavor__img">
           <img src="assets/img/flavor-classico.jpg" alt="Brookie clásico" style="object-position:50% 30%" />
           <span class="flavor__tag">01</span>
@@ -151,7 +152,7 @@
         </div>
       </article>
 
-      <article class="flavor">
+      <article class="flavor" data-anim data-anim-delay="2">
         <div class="flavor__img">
           <img src="assets/img/flavor-dulce.jpg" alt="Brookie con nuez y sal" style="object-position:50% 40%" />
           <span class="flavor__tag">02</span>
@@ -162,7 +163,7 @@
         </div>
       </article>
 
-      <article class="flavor">
+      <article class="flavor" data-anim data-anim-delay="3">
         <div class="flavor__img">
           <img src="assets/img/flavor-dulce.jpg" alt="Brookie de dulce de leche" style="object-position:50% 75%" />
           <span class="flavor__tag">03</span>
@@ -173,7 +174,7 @@
         </div>
       </article>
 
-      <article class="flavor">
+      <article class="flavor" data-anim data-anim-delay="4">
         <div class="flavor__img">
           <img src="assets/img/flavor-classico.jpg" alt="Brookie de chocolate blanco y frambuesa" style="object-position:50% 78%" />
           <span class="flavor__tag">04</span>
@@ -189,8 +190,8 @@
 
   <!-- ===== La marca ===== -->
   <section class="marca" id="marca">
-    <img class="marca__icon" src="assets/img/cupid-brookie.png" alt="Cupido de coopid" />
-    <div class="marca__text">
+    <img class="marca__icon" data-anim src="assets/img/cupid-brookie.png" alt="Cupido de coopid" />
+    <div class="marca__text" data-anim data-anim-delay="1">
       <p class="eyebrow eyebrow--red">La marca</p>
       <h2 class="section-title section-title--red marca__title">
         Coopid nació de un flechazo: alguien no quiso elegir entre el brownie y la cookie, y horneó las dos cosas juntas.
@@ -206,7 +207,7 @@
   <!-- ===== Footer ===== -->
   <footer class="footer">
     <div class="footer__top">
-      <div class="footer__lead">
+      <div class="footer__lead" data-anim>
         <h2>Brookies artesanales, horneados con amor.</h2>
         <p>Tandas chicas, cortados a mano, entregados el mismo día.</p>
       </div>
@@ -237,6 +238,26 @@
     </div>
   </footer>
 
+  <script>
+    // Aparición al hacer scroll
+    (function () {
+      var els = document.querySelectorAll('[data-anim]');
+      if (!els.length) return;
+      if (!('IntersectionObserver' in window)) {
+        els.forEach(function (e) { e.classList.add('in'); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) {
+            en.target.classList.add('in');
+            io.unobserve(en.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+      els.forEach(function (e) { io.observe(e); });
+    })();
+  </script>
 
 </body>
 </html>
