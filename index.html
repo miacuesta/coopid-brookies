@@ -61,9 +61,11 @@
       </p>
     </div>
 
-    <!-- mordida (el beige muerde el rojo, como galletita) -->
-    <div class="bite bite--up" aria-hidden="true">
-      <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><use href="#bite-path" /></svg>
+    <!-- cloud transition (bottom-left) -->
+    <div class="cloud cloud--hero" aria-hidden="true">
+      <svg viewBox="0 0 520 200" preserveAspectRatio="none">
+        <path fill="#F2E8D5" d="M0,200 L0,70 Q30,20 80,45 Q95,-5 150,20 Q185,-10 230,30 Q270,10 300,55 Q340,45 360,90 Q420,80 430,130 Q480,120 520,150 L520,200 Z"/>
+      </svg>
     </div>
   </section>
 
@@ -121,14 +123,17 @@
       </div>
     </div>
 
+    <!-- cloud transition (bottom-right) into red -->
+    <div class="cloud cloud--brookie" aria-hidden="true">
+      <svg viewBox="0 0 520 200" preserveAspectRatio="none">
+        <path fill="#F2E8D5" d="M520,200 L520,70 Q490,20 440,45 Q425,-5 370,20 Q335,-10 290,30 Q250,10 220,55 Q180,45 160,90 Q100,80 90,130 Q40,120 0,150 L0,200 Z"/>
+      </svg>
+    </div>
+    <span class="drip" aria-hidden="true"></span>
   </section>
 
   <!-- ===== Sabores ===== -->
   <section class="sabores" id="sabores">
-    <!-- mordida: el beige de arriba muerde el rojo -->
-    <div class="bite bite--top" aria-hidden="true">
-      <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><use href="#bite-path" /></svg>
-    </div>
     <div class="sabores__head">
       <p class="eyebrow eyebrow--cream">Sabores</p>
       <h2 class="section-title section-title--cream">Cuatro maneras de flechar.</h2>
@@ -180,10 +185,6 @@
       </article>
     </div>
 
-    <!-- mordida hacia el beige de "La marca" -->
-    <div class="bite bite--up" aria-hidden="true">
-      <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><use href="#bite-path" /></svg>
-    </div>
   </section>
 
   <!-- ===== La marca ===== -->
@@ -235,25 +236,6 @@
       <span>Product made by las Mías</span>
     </div>
   </footer>
-
-  <!-- ===== SVG defs: borde mordida ===== -->
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <symbol id="bite-path" viewBox="0 0 1440 120" preserveAspectRatio="none">
-      <!-- borde de galletita: recto con dos mordiscos (marcas de dientes) -->
-      <path fill="#F2E8D5" d="M0,120 L0,50
-        L300,50
-        C322,96 360,96 382,50
-        C404,94 442,94 464,50
-        C486,96 524,96 546,50
-        C568,94 606,94 628,50
-        L980,50
-        C1002,96 1040,96 1062,50
-        C1084,94 1122,94 1144,50
-        C1166,96 1204,96 1226,50
-        L1440,50
-        L1440,120 Z" />
-    </symbol>
-  </svg>
 
 
 </body>

@@ -182,12 +182,20 @@ img { display: block; max-width: 100%; }
   pointer-events: none;
 }
 
-/* ===== Mordidas entre secciones (galletita) ===== */
-.bite { position: absolute; left: 0; width: 100%; z-index: 1; line-height: 0; pointer-events: none; }
-.bite svg { display: block; width: 100%; height: clamp(50px, 6.5vw, 92px); }
-.bite--up { bottom: -1px; }                                   /* beige sube y muerde el rojo */
-.bite--top { top: -1px; }                                     /* beige de arriba muerde el rojo */
-.bite--top svg { transform: scaleY(-1); }
+/* ===== Cloud transitions ===== */
+.cloud { position: absolute; bottom: -1px; z-index: 4; line-height: 0; }
+.cloud svg { display: block; }
+.cloud--hero { left: -2px; width: min(46vw, 560px); height: 150px; }
+.cloud--brookie { right: -2px; width: min(46vw, 560px); height: 150px; }
+
+.drip {
+  position: absolute;
+  bottom: -14px; left: 30%;
+  width: 34px; height: 42px; z-index: 5;
+  background: var(--crema);
+  border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+  transform: rotate(8deg);
+}
 
 /* ===== Qué es un brookie (anatomía) ===== */
 .brookie {
@@ -273,7 +281,7 @@ img { display: block; max-width: 100%; }
 .sabores {
   position: relative;
   background: var(--rojo);
-  padding: clamp(74px, 10vw, 128px) 0 clamp(80px, 11vw, 130px);
+  padding: clamp(56px, 8vw, 90px) 0 clamp(74px, 10vw, 120px);
   overflow: hidden;
 }
 .sabores__head {
