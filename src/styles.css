@@ -1,7 +1,7 @@
 /* ===== Choco Taste (script principal) ===== */
 @font-face {
   font-family: "Choco Taste";
-  src: url("assets/fonts/ChocoTaste-Trial.otf") format("opentype");
+  src: url("/assets/fonts/ChocoTaste-Trial.otf") format("opentype");
   font-weight: 400;
   font-display: swap;
 }
@@ -22,8 +22,6 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; }
-
 body {
   font-family: var(--sans);
   color: var(--tinta);
@@ -31,8 +29,6 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
-  -webkit-user-select: none;
-  user-select: none;
 }
 
 img { display: block; max-width: 100%; }
@@ -87,23 +83,36 @@ img { display: block; max-width: 100%; }
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  padding: 16px clamp(20px, 5vw, 64px);
+  padding: 8px clamp(20px, 5vw, 64px);
   max-width: 100%;
 }
-.nav__logo img { height: 46px; width: auto; }
+.nav__logo img { height: 62px; width: auto; }
 .nav__links {
   display: flex;
   gap: clamp(20px, 3vw, 44px);
   margin: 0 auto;
 }
 .nav__links a {
+  position: relative;
   color: var(--tinta);
   text-decoration: none;
   font-weight: 500;
   font-size: 1rem;
+  padding-bottom: 4px;
   transition: color .2s;
 }
+.nav__links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: var(--rojo);
+  transition: width .25s cubic-bezier(.16, .84, .44, 1);
+}
 .nav__links a:hover { color: var(--rojo); }
+.nav__links a:hover::after { width: 100%; }
 
 .btn {
   background: var(--rojo);
@@ -122,7 +131,12 @@ img { display: block; max-width: 100%; }
 .hero {
   position: relative;
   background: var(--rojo);
-  padding: clamp(70px, 12vw, 150px) 20px clamp(120px, 16vw, 190px);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(120px, 16vw, 180px) 20px clamp(90px, 12vw, 140px);
   text-align: center;
   overflow: hidden;
 }
@@ -149,6 +163,15 @@ img { display: block; max-width: 100%; }
   font-size: 1.05rem;
   line-height: 1.55;
 }
+.hero__cta {
+  display: inline-block;
+  margin-top: 36px;
+  background: var(--crema-hero);
+  color: var(--rojo);
+  font-size: 1.05rem;
+  padding: 17px 38px;
+}
+.hero__cta:hover { background: #fff; }
 .hero__cupid {
   position: absolute;
   right: clamp(-30px, 2vw, 60px);
@@ -161,13 +184,13 @@ img { display: block; max-width: 100%; }
 }
 
 /* ===== Arrow doodles (inclinadas, volando hacia el título) ===== */
-.arrow { position: absolute; width: 110px; height: auto; pointer-events: none; z-index: 2; }
-.hero .arrow { opacity: .9; transform: rotate(-55deg); }
+.arrow { position: absolute; width: 150px; height: auto; pointer-events: none; z-index: 2; }
+.hero .arrow { opacity: .9; }
 
 /* trazan una diagonal ascendente hacia el título, sin bajar hasta el subtítulo */
-.arrow--h1 { top: 9%;  left: 5%;  }
-.arrow--h2 { top: 20%; left: 8%; }
-.arrow--h3 { top: 31%; left: 11%; }
+.arrow--h1 { top: 9%;  left: 5%; transform: rotate(-55deg); }
+.arrow--h2 { top: 40%; left: 4%; transform: rotate(-120deg);}
+.arrow--h3 { top: 70%; left: 6%; transform: rotate(-60deg);}
 
 /* flecha clavada en la última "o" de cookie, de abajo hacia arriba */
 .hero__cookie { position: relative; white-space: nowrap; }
@@ -185,18 +208,27 @@ img { display: block; max-width: 100%; }
   pointer-events: none;
 }
 
-/* ===== Mordidas entre secciones (galletita) ===== */
-.bite { position: absolute; left: 0; width: 100%; z-index: 1; line-height: 0; pointer-events: none; }
-.bite svg { display: block; width: 100%; height: clamp(50px, 6.5vw, 92px); }
-.bite--up { bottom: -1px; }                                   /* beige sube y muerde el rojo */
-.bite--top { top: -1px; }                                     /* beige de arriba muerde el rojo */
-.bite--top svg { transform: scaleY(-1); }
+/* ===== Nubes de esquina (bite): hero abajo-izquierda, sabores arriba-derecha ===== */
+.bite {
+  position: absolute;
+  width: clamp(190px, 26vw, 380px);
+  z-index: 1;
+  line-height: 0;
+  pointer-events: none;
+}
+.bite svg { display: block; width: 100%; height: auto; overflow: visible; }
+.bite--bottom-left { left: 0; bottom: -2px; }
+.bite--top-right { right: 0; top: -2px; transform: rotate(180deg); }
 
 /* ===== Qué es un brookie (anatomía) ===== */
 .brookie {
   position: relative;
   background: var(--beige);
-  padding: clamp(56px, 8vw, 96px) clamp(20px, 5vw, 64px) clamp(92px, 12vw, 150px);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(40px, 6vw, 72px) clamp(20px, 5vw, 64px);
   text-align: center;
   overflow: hidden;
 }
@@ -206,18 +238,18 @@ img { display: block; max-width: 100%; }
 /* flechas en zigzag ascendente por el margen izquierdo, desde las cards hasta arriba del todo */
 .brookie__trail-arrow {
   position: absolute;
-  width: 84px;
+  width: 110px;
   height: auto;
   opacity: .85;
   z-index: 2;
   pointer-events: none;
 }
-.brookie__trail-arrow--1 { top: clamp(10px, 2vw, 26px);  left: clamp(6px, 2vw, 22px);  transform: rotate(-83deg); }
-.brookie__trail-arrow--2 { top: clamp(84px, 10vw, 128px); left: clamp(24px, 5vw, 52px);  transform: rotate(-119deg); }
-.brookie__trail-arrow--3 { top: clamp(172px, 17vw, 222px); left: clamp(70px, 9vw, 112px); transform: rotate(-159deg); }
+.brookie__trail-arrow--1 { top: clamp(50px, 2vw, 90px);  left: clamp(76px, 2vw, 92px);  transform: rotate(-83deg); }
+.brookie__trail-arrow--2 { top: clamp(170px, 10vw, 220px); left: clamp(94px, 5vw, 122px);  transform: rotate(-129deg); }
+.brookie__trail-arrow--3 { top: clamp(200px, 17vw, 250px); left: clamp(200px, 9vw, 250px); transform: rotate(-159deg); }
 .brookie__trail-arrow--4 { top: clamp(246px, 23vw, 300px); left: clamp(6px, 3vw, 30px);  transform: rotate(-131deg); }
 
-.anatomy { margin-top: clamp(40px, 6vw, 72px); }
+.anatomy { margin-top: clamp(24px, 4vw, 48px); }
 .anatomy__stage {
   display: grid;
   grid-template-columns: 1fr clamp(210px, 25vw, 320px) 1fr;
@@ -256,13 +288,13 @@ img { display: block; max-width: 100%; }
 .anno--br { grid-area: br; justify-content: flex-start; }
 
 .anno__text {
-  max-width: 264px;
+  max-width: 350px;
   background: #F5F5F4;
   border: 1px solid rgba(124, 27, 12, .16);
   border-radius: 18px;
   padding: 18px 22px;
 }
-.anno--tl .anno__text, .anno--bl .anno__text { text-align: right; }
+.anno--tl .anno__text, .anno--bl .anno__text { text-align: left; }
 .anno--tr .anno__text, .anno--br .anno__text { text-align: left; }
 
 .anno__text h3 {
@@ -501,7 +533,37 @@ img { display: block; max-width: 100%; }
   .footer__bottom { flex-direction: column; }
 }
 
+/* ===== Animaciones de entrada ===== */
+.js [data-anim] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .85s cubic-bezier(.16, .84, .44, 1), transform .85s cubic-bezier(.16, .84, .44, 1);
+  will-change: opacity, transform;
+}
+.js [data-anim].in { opacity: 1; transform: none; }
+[data-anim-delay="1"] { transition-delay: .09s; }
+[data-anim-delay="2"] { transition-delay: .18s; }
+[data-anim-delay="3"] { transition-delay: .27s; }
+[data-anim-delay="4"] { transition-delay: .36s; }
+/* una vez visible, la tarjeta vuelve a su hover ágil */
+.js .flavor.in { transition: transform .28s ease; }
+
+/* flotación suave del cupido */
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+.hero__cupid { animation: floaty 6s ease-in-out infinite; }
+
+/* leve latido de la flecha clavada en la cookie */
+@keyframes heartbeat {
+  0%, 100% { transform: translate(-50%, -50%) rotate(-55deg) scale(1); }
+  50% { transform: translate(-50%, -50%) rotate(-55deg) scale(1.08); }
+}
+.hero__strike { animation: heartbeat 2.6s ease-in-out infinite; }
+
 @media (prefers-reduced-motion: reduce) {
   .marquee__track { animation: none; }
-  html { scroll-behavior: auto; }
+  .hero__cupid, .hero__strike { animation: none; }
+  .js [data-anim] { opacity: 1; transform: none; transition: none; }
 }

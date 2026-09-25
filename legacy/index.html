@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>coopid · Brookies artesanales, horneados con amor</title>
+<meta name="description" content="El flechazo entre el brownie y la cookie. Brookies artesanales, tandas chicas, cortados a mano y entregados el mismo día." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&family=Fredoka:wght@400;500;600&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<script src="script.js"></script>
+</head>
+<body>
+
+  <!-- ===== Marquee ===== -->
+  <div class="marquee">
+    <div class="marquee__track">
+      <span class="marquee__group">
+        <span>Horneados con amor</span><span class="marquee__sep">✦</span>
+        <span>El flechazo entre el brownie y la cookie</span><span class="marquee__sep">✦</span>
+        <span>Tandas chicas, cortados a mano</span><span class="marquee__sep">✦</span>
+        <span>Brookies artesanales</span><span class="marquee__sep">✦</span>
+      </span>
+      <span class="marquee__group" aria-hidden="true">
+        <span>Horneados con amor</span><span class="marquee__sep">✦</span>
+        <span>El flechazo entre el brownie y la cookie</span><span class="marquee__sep">✦</span>
+        <span>Tandas chicas, cortados a mano</span><span class="marquee__sep">✦</span>
+        <span>Brookies artesanales</span><span class="marquee__sep">✦</span>
+      </span>
+    </div>
+  </div>
+
+  <!-- ===== Nav ===== -->
+  <header class="nav">
+    <a href="#" class="nav__logo" aria-label="coopid inicio">
+      <img src="assets/img/cupid-brookie.png" alt="" />
+    </a>
+    <nav class="nav__links">
+      <a href="#brookie">Qué es un brookie</a>
+      <a href="#sabores">Sabores</a>
+      <a href="#marca">La marca</a>
+    </nav>
+
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <!-- arrow doodles (inclinadas, volando hacia el título) -->
+    <img class="arrow arrow--h1" src="assets/img/arrow-cream.png" alt="" />
+    <img class="arrow arrow--h2" src="assets/img/arrow-cream.png" alt="" />
+    <img class="arrow arrow--h3" src="assets/img/arrow-cream.png" alt="" />
+    <img class="hero__cupid" src="assets/img/cupid-brookie.png" alt="" />
+
+    <div class="hero__inner">
+      <h1 class="hero__title" data-anim>
+        El <span class="script">flechazo</span> entre el<br />brownie y la cookie</span>
+      </h1>
+      <p class="hero__sub" data-anim data-anim-delay="1">
+        El centro húmedo y profundo de un brownie con pequeños pedazos de
+        cookie repartidos. Todo en una sola pieza, horneada del día.
+      </p>
+      <a href="#sabores" class="btn hero__cta" data-anim data-anim-delay="2">Ver el catálogo</a>
+    </div>
+
+    <!-- mordida (el beige muerde el rojo, como galletita) -->
+    <div class="bite bite--bottom-left" aria-hidden="true">
+      <svg viewBox="0 0 320 260"><use href="#cloud-corner" /></svg>
+    </div>
+  </section>
+
+  <!-- ===== Qué es un brookie ===== -->
+  <section class="brookie" id="brookie">
+    <!-- flechas en zigzag ascendente por el margen izquierdo, mismo estilo que el hero -->
+    <img class="brookie__trail-arrow brookie__trail-arrow--1" src="assets/img/arrow-red.png" alt="" />
+    <img class="brookie__trail-arrow brookie__trail-arrow--2" src="assets/img/arrow-red.png" alt="" />
+    <img class="brookie__trail-arrow brookie__trail-arrow--3" src="assets/img/arrow-red.png" alt="" />
+
+    <div class="brookie__head" data-anim>
+      <p class="eyebrow eyebrow--red">Qué es un brookie</p>
+      <h2 class="section-title section-title--red">
+        No es medio brownie ni media cookie.<br />Es algo mejor. Mucho mejor.
+      </h2>
+    </div>
+
+    <!-- Anatomía del brookie: la información "flechada" -->
+    <div class="anatomy">
+      <div class="anatomy__stage">
+        <div class="anatomy__disc" data-anim>
+          <img class="anatomy__brookie" src="assets/img/brookie-center.png" alt="Un brookie recién cortado" />
+        </div>
+
+        <article class="anno anno--tl" data-anim data-anim-delay="1">
+          <div class="anno__text">
+            <h3>Centro húmedo</h3>
+            <p>La miga profunda del brownie, densa y todavía tibia por dentro. 
+              <br>Nunca seca en los bordes.</p>
+          </div>
+        </article>
+
+        <article class="anno anno--bl" data-anim data-anim-delay="2">
+          <div class="anno__text">
+            <h3>Pedazos de cookie</h3>
+            <p>Masa de galleta en trozos, repartida a mano antes del horno. </p>
+             <p>Se ve y se muerde.</p> 
+          </div>
+        </article>
+
+        <article class="anno anno--tr" data-anim data-anim-delay="1">
+          <div class="anno__text">
+            <h3>Una sola pieza</h3>
+            <p>No son dos postres pegados: las dos masas se hornean juntas en la misma placa.</p>
+          </div>
+        </article>
+
+        <article class="anno anno--br" data-anim data-anim-delay="2">
+          <div class="anno__text">
+            <h3>Tanda chica</h3>
+            <p>Horneamos poco y seguido. Lo que sale del horno hoy se corta y se entrega hoy.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ===== Sabores ===== -->
+  <section class="sabores" id="sabores">
+    <!-- mordida: el beige de arriba muerde el rojo -->
+    <div class="bite bite--top-right" aria-hidden="true">
+      <svg viewBox="0 0 320 260"><use href="#cloud-corner" /></svg>
+    </div>
+    <div class="sabores__head" data-anim>
+      <p class="eyebrow eyebrow--cream">Sabores</p>
+      <h2 class="section-title section-title--cream">Cuatro maneras de flechar.</h2>
+    </div>
+
+    <div class="sabores__grid">
+      <article class="flavor" data-anim data-anim-delay="1">
+        <div class="flavor__img">
+          <img src="assets/img/flavor-classico.jpg" alt="Brookie clásico" style="object-position:50% 30%" />
+          <span class="flavor__tag">01</span>
+        </div>
+        <div class="flavor__body">
+          <h3>Clásico</h3>
+          <p>Chocolate semiamargo 60% y cookie de vainilla. El flechazo en su versión más limpia.</p>
+        </div>
+      </article>
+
+      <article class="flavor" data-anim data-anim-delay="2">
+        <div class="flavor__img">
+          <img src="assets/img/flavor-nuez.jpg" alt="Brookie con nuez y sal" style="object-position:50% 40%" />
+          <span class="flavor__tag">02</span>
+        </div>
+        <div class="flavor__body">
+          <h3>Nuez y sal</h3>
+          <p>Nueces tostadas en casa y una pizca de sal marina arriba, justo antes del horno.</p>
+        </div>
+      </article>
+
+      <article class="flavor" data-anim data-anim-delay="3">
+        <div class="flavor__img">
+          <img src="assets/img/flavor-dulce.jpg" alt="Brookie de dulce de leche" style="object-position:50% 75%" />
+          <span class="flavor__tag">03</span>
+        </div>
+        <div class="flavor__body">
+          <h3>Dulce de leche</h3>
+          <p>Corazón de dulce de leche repostero que se estira al partirlo por la mitad.</p>
+        </div>
+      </article>
+
+      <article class="flavor" data-anim data-anim-delay="4">
+        <div class="flavor__img">
+          <img src="assets/img/flavor-blanco.jpg" alt="Brookie de chocolate blanco y frambuesa" style="object-position:50% 50%" />
+          <span class="flavor__tag">04</span>
+        </div>
+        <div class="flavor__body">
+          <h3>Blanco</h3>
+          <p>Chocolate blanco y frambuesa fresca, un toque ácido que corta el dulce.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== La marca ===== -->
+  <section class="marca" id="marca">
+    <img class="marca__icon" data-anim src="assets/img/cupid-brookie.png" alt="Cupido de coopid" />
+    <div class="marca__text" data-anim data-anim-delay="1">
+      <p class="eyebrow eyebrow--red">La marca</p>
+      <h2 class="section-title section-title--red marca__title">
+        Coopid nació de un flechazo: alguien no quiso elegir entre el brownie y la cookie, y horneó las dos cosas juntas.
+      </h2>
+      <p class="marca__body">
+        Desde entonces hacemos una sola cosa y la hacemos bien. Tandas chicas,
+        ingredientes que se pueden nombrar y un horno que no para.
+        <em>Product made by las Mías.</em>
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="footer__top">
+      <div class="footer__lead" data-anim>
+        <h2>Brookies artesanales, horneados con amor.</h2>
+        <p>Tandas chicas, cortados a mano, entregados el mismo día.</p>
+      </div>
+      <div class="footer__cols" data-anim data-anim-delay="1">
+        <div>
+          <p class="footer__label">Navegar</p>
+          <a href="#brookie">Qué es un brookie</a>
+          <a href="#sabores">Sabores</a>
+          <a href="#marca">La marca</a>
+        </div>
+        <div>
+          <p class="footer__label">Redes</p>
+          <a href="#">Instagram</a>
+          <a href="#">TikTok</a>
+          <a href="#">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__card" data-anim>
+      <img src="assets/img/cupid-brookie.png" alt="" />
+      <span class="script footer__wordmark">coopid</span>
+    </div>
+
+    <div class="footer__bottom">
+      <span>coopid® 2026 · Todos los derechos reservados</span>
+      <span>Product made by las Mías</span>
+    </div>
+  </footer>
+
+  <!-- ===== SVG defs: nube de esquina (tres óvalos en diagonal) ===== -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="cloud-corner" viewBox="0 0 320 260">
+      <g fill="#F2E8D5">
+        <!-- 1) ovalo-esquina: el óvalo grande pegado a la esquina -->
+        <ellipse id="ovalo-esquina" cx="40" cy="212" rx="80" ry="90" />
+        <!-- 2) circulo-medio: el círculo del medio -->
+        <circle id="circulo-medio" cx="152" cy="236" r="58" />
+        <!-- 3) frijol-punta: el óvalo angosto e inclinado de la punta -->
+        <ellipse id="frijol-punta" cx="210" cy="260" rx="34" ry="30" transform="rotate(-22 226 222)" />
+      </g>
+    </symbol>
+  </svg>
+
+</body>
+</html>
