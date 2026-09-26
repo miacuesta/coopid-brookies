@@ -18,9 +18,6 @@ export default function Hero() {
           El centro húmedo y profundo de un brownie con pequeños pedazos de
           cookie repartidos. Todo en una sola pieza, horneada del día.
         </p>
-        <a href="#sabores" className="btn hero__cta" data-anim data-anim-delay="2">
-          Ver el catálogo
-        </a>
       </div>
 
       <CloudCorner position="bottom-left" />
