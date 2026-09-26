@@ -18,11 +18,13 @@ export default function Brookie() {
       <img className="brookie__trail-arrow brookie__trail-arrow--1" src={asset('img/arrow-red.png')} alt="" />
       <img className="brookie__trail-arrow brookie__trail-arrow--2" src={asset('img/arrow-red.png')} alt="" />
       <img className="brookie__trail-arrow brookie__trail-arrow--3" src={asset('img/arrow-red.png')} alt="" />
+      <img className="brookie__trail-arrow brookie__trail-arrow--4" src={asset('img/arrow-red.png')} alt="" />
+
 
       <div className="brookie__head" data-anim>
         <p className="eyebrow eyebrow--red">Qué es un brookie</p>
         <h2 className="section-title section-title--red">
-          No es medio brownie ni media cookie.<br />Es algo mejor. Mucho mejor.
+          No es medio brownie ni media cookie. Es algo mejor.<br />Mucho mejor.
         </h2>
       </div>
 
@@ -35,14 +37,12 @@ export default function Brookie() {
 
           <Annotation pos="tl" delay="1" title="Centro húmedo">
             <p>
-              La miga profunda del brownie, densa y todavía tibia por dentro.{' '}
-              <br />Nunca seca en los bordes.
+              La miga profunda del brownie, densa y todavía tibia por dentro.{' '} Nunca seca en los bordes.
             </p>
           </Annotation>
 
           <Annotation pos="bl" delay="2" title="Pedazos de cookie">
-            <p>Masa de galleta en trozos, repartida a mano antes del horno. </p>
-            <p>Se ve y se muerde.</p>
+            <p>Masa de galleta en trozos, repartida a mano antes del horno. Se ve y se muerde.</p>
           </Annotation>
 
           <Annotation pos="tr" delay="1" title="Una sola pieza">

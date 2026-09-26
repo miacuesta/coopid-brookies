@@ -8,7 +8,7 @@ export default function Hero() {
       <img className="arrow arrow--h1" src={asset('img/arrow-cream.png')} alt="" />
       <img className="arrow arrow--h2" src={asset('img/arrow-cream.png')} alt="" />
       <img className="arrow arrow--h3" src={asset('img/arrow-cream.png')} alt="" />
-      <img className="hero__cupid" src={asset('img/cupid-brookie.png')} alt="" />
+      <img className="hero__cupid" src={asset('img/cupid-hero.png')} alt="" />
 
       <div className="hero__inner">
         <h1 className="hero__title" data-anim>

@@ -18,7 +18,8 @@ export const flavors = [
     alt: 'Brookie clásico',
     position: '50% 30%',
     title: 'Clásico',
-    text: 'Chocolate semiamargo 60% y cookie de vainilla. El flechazo en su versión más limpia.',
+    text: 'Chocolate semiamargo 60% y cookie de vainilla.' +
+    ' El flechazo en su versión más limpia.',
   },
   {
     tag: '02',
