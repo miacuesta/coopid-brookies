@@ -348,25 +348,13 @@ img { display: block; max-width: 100%; }
   aspect-ratio: 1 / 1;
   overflow: hidden;
   border-radius: 24px;
-  box-shadow: 0 16px 34px rgba(0, 0, 0, .22);
+  box-shadow: 0 0px 0px rgba(0, 0, 0, .22);
 }
 .flavor__img img {
   width: 100%; height: 100%; object-fit: cover;
   transition: transform .5s ease;
 }
 .flavor:hover .flavor__img img { transform: scale(1.06); }
-.flavor__tag {
-  position: absolute;
-  top: 14px; left: 14px;
-  background: rgba(30, 20, 15, .55);
-  color: var(--beige);
-  font-weight: 600;
-  font-size: .74rem;
-  letter-spacing: .12em;
-  padding: 5px 11px;
-  border-radius: 999px;
-  backdrop-filter: blur(4px);
-}
 
 .texto-no-editable {
   user-select: none; /* Versión estándar moderna */
