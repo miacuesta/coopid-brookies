@@ -183,6 +183,7 @@ img { display: block; max-width: 100%; }
   pointer-events: none;
 }
 
+<<<<<<< HEAD:legacy/styles.css
 /* ===== Arrow doodles (inclinadas, volando hacia el título) ===== */
 .arrow { position: absolute; width: 150px; height: auto; pointer-events: none; z-index: 2; }
 .hero .arrow { opacity: .9; }
@@ -218,6 +219,7 @@ img { display: block; max-width: 100%; }
   pointer-events: none;
 }
 
+<<<<<<< HEAD:legacy/styles.css
 /* ===== Nubes de esquina (bite): hero abajo-izquierda, sabores arriba-derecha ===== */
 .bite {
   position: absolute;
@@ -259,7 +261,12 @@ img { display: block; max-width: 100%; }
   overflow: hidden;
 }
 .brookie__head .eyebrow { display: block; margin-bottom: 18px; }
-.brookie__head .section-title { max-width: 720px; margin: 0 auto; }
+.brookie__head .section-title {
+  max-width: 940px;
+  margin: 0 auto;
+  font-size: clamp(1.6rem, 4vw, 2.85rem);
+  text-wrap: balance;
+}
 
 /* flechas en zigzag ascendente por el margen izquierdo, desde las cards hasta arriba del todo */
 .brookie__trail-arrow {
@@ -363,14 +370,14 @@ img { display: block; max-width: 100%; }
 .sabores {
   position: relative;
   background: var(--rojo);
-  padding: clamp(74px, 10vw, 128px) 0 clamp(80px, 11vw, 130px);
+  padding: clamp(56px, 8vw, 90px) 0 clamp(74px, 10vw, 120px);
   overflow: hidden;
 }
 .sabores__head {
   max-width: var(--maxw);
   margin: 0 auto clamp(34px, 5vw, 56px);
   padding: 0 clamp(20px, 5vw, 64px);
-  text-align: left;
+  text-align: center;
 }
 .sabores__head .eyebrow { display: block; margin-bottom: 16px; }
 
@@ -394,7 +401,7 @@ img { display: block; max-width: 100%; }
   aspect-ratio: 1 / 1;
   overflow: hidden;
   border-radius: 24px;
-  box-shadow: 0 0px 0px rgba(0, 0, 0, .22);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, .22);
 }
 .flavor__img img {
   width: 100%; height: 100%; object-fit: cover;
@@ -582,6 +589,7 @@ img { display: block; max-width: 100%; }
 /* ===== Animaciones de entrada ===== */
 .js [data-anim] {
   opacity: 0;
+<<<<<<< HEAD:legacy/styles.css
   transform: translateY(28px);
   transition: opacity .85s cubic-bezier(.16, .84, .44, 1), transform .85s cubic-bezier(.16, .84, .44, 1);
 =======
@@ -596,6 +604,7 @@ img { display: block; max-width: 100%; }
 [data-anim-delay="3"] { transition-delay: .27s; }
 [data-anim-delay="4"] { transition-delay: .36s; }
 /* una vez visible, la tarjeta vuelve a su hover ágil */
+<<<<<<< HEAD:legacy/styles.css
 .js .flavor.in { transition: transform .28s ease; }
 =======
 .js .flavor.in { transition: transform .28s ease, box-shadow .28s ease; }
@@ -608,6 +617,7 @@ img { display: block; max-width: 100%; }
 }
 .hero__cupid { animation: floaty 6s ease-in-out infinite; }
 
+<<<<<<< HEAD:legacy/styles.css
 /* leve latido de la flecha clavada en la cookie */
 @keyframes heartbeat {
   0%, 100% { transform: translate(-50%, -50%) rotate(-55deg) scale(1); }
