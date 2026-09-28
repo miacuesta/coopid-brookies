@@ -347,7 +347,7 @@ img { display: block; max-width: 100%; }
 }
 .sabores__head .eyebrow { display: block; margin-bottom: 16px; }
 
-/* Carrusel de sabores: fila a todo el ancho; la activa nítida y las de los costados borrosas */
+/* Carrusel de sabores: fila a todo el ancho; la activa resaltada y las de los costados más oscuras */
 .carousel {
   --gap: 28px;
   --card-w: min(80vw, clamp(220px, calc(100svh - 440px), 400px));
@@ -362,7 +362,7 @@ img { display: block; max-width: 100%; }
   grid-area: 1 / 1;
   width: var(--card-w);
   cursor: pointer;
-  filter: blur(3px) brightness(.72);
+  filter: brightness(.72);
   z-index: 1;
   transition: transform .7s cubic-bezier(.16, .84, .44, 1), filter .7s ease;
   user-select: none;
